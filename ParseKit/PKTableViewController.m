@@ -98,10 +98,25 @@
             }
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 if (objects && error == nil) {
-                    [_objects addObjectsFromArray:objects];
-                }
-                else {
-                    _objects = nil;
+                    if (query.cachePolicy == kPFCachePolicyCacheThenNetwork) {
+                        for (PFObject *object in objects) {
+                            NSUInteger index = [_objects indexOfObjectWithOptions:NSEnumerationConcurrent|NSEnumerationReverse
+                                                                      passingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+                                                                          BOOL found = [[(PFObject *)obj objectId] isEqualToString:object.objectId];
+                                                                          stop = &found;
+                                                                          return found;
+                                                                      }];
+                            if (index == NSNotFound) {
+                                [_objects addObject:object];
+                            }
+                            else {
+                                [_objects replaceObjectAtIndex:index withObject:object];
+                            }
+                        }
+                    }
+                    else {
+                        [_objects addObjectsFromArray:objects];
+                    }
                 }
                 [self.tableView reloadData];
             }];
