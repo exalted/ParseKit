@@ -32,6 +32,8 @@
 
 @synthesize numberOfObjectsPerPage = _numberOfObjectsPerPage;
 
+@synthesize objects = _objects;
+
 @synthesize queryDelegate = _queryDelegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
