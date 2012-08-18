@@ -75,6 +75,9 @@
                 else {
                     _objects = nil;
                 }
+                if ([self.queryDelegate respondsToSelector:@selector(didLoadObjectsForTableView:error:)]) {
+                    [self.queryDelegate didLoadObjectsForTableView:self.tableView error:error];
+                }
                 [self.tableView reloadData];
             }];
         }
@@ -117,6 +120,9 @@
                     else {
                         [_objects addObjectsFromArray:objects];
                     }
+                }
+                if ([self.queryDelegate respondsToSelector:@selector(didLoadObjectsForTableView:error:)]) {
+                    [self.queryDelegate didLoadObjectsForTableView:self.tableView error:error];
                 }
                 [self.tableView reloadData];
             }];

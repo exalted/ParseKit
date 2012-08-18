@@ -26,6 +26,8 @@
 @optional
 - (PFQuery *)queryForTableView:(UITableView *)tableView;
 
+- (void)didLoadObjectsForTableView:(UITableView *)tableView error:(NSError *)error;
+
 @end
 
 ////////////////////////////////////////////////////////////////////////////////
