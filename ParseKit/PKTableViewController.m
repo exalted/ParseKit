@@ -69,14 +69,16 @@
                 query.limit = self.numberOfObjectsPerPage;
             }
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                PKQueryObjectsCountChange change = PKQueryObjectsCountChangeFresh;
                 if (objects && error == nil) {
                     _objects = [NSMutableArray arrayWithArray:objects];
                 }
                 else {
                     _objects = nil;
+                    change = PKQueryObjectsCountChangeError;
                 }
-                if ([self.queryDelegate respondsToSelector:@selector(didLoadObjectsForTableView:error:)]) {
-                    [self.queryDelegate didLoadObjectsForTableView:self.tableView error:error];
+                if ([self.queryDelegate respondsToSelector:@selector(didLoadObjectsForTableView:countChange:error:)]) {
+                    [self.queryDelegate didLoadObjectsForTableView:self.tableView countChange:change error:error];
                 }
                 [self.tableView reloadData];
             }];
@@ -100,6 +102,7 @@
                 query.skip = self.objects.count;
             }
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                PKQueryObjectsCountChange change = PKQueryObjectsCountChangeSame;
                 if (objects && error == nil) {
                     if (query.cachePolicy == kPFCachePolicyCacheThenNetwork) {
                         for (PFObject *object in objects) {
@@ -111,6 +114,7 @@
                                                                       }];
                             if (index == NSNotFound) {
                                 [_objects addObject:object];
+                                change = PKQueryObjectsCountChangeMore;
                             }
                             else {
                                 [_objects replaceObjectAtIndex:index withObject:object];
@@ -119,10 +123,11 @@
                     }
                     else {
                         [_objects addObjectsFromArray:objects];
+                        change = PKQueryObjectsCountChangeMore;
                     }
                 }
-                if ([self.queryDelegate respondsToSelector:@selector(didLoadObjectsForTableView:error:)]) {
-                    [self.queryDelegate didLoadObjectsForTableView:self.tableView error:error];
+                if ([self.queryDelegate respondsToSelector:@selector(didLoadObjectsForTableView:countChange:error:)]) {
+                    [self.queryDelegate didLoadObjectsForTableView:self.tableView countChange:change error:error];
                 }
                 [self.tableView reloadData];
             }];

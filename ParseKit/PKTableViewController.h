@@ -18,6 +18,13 @@
 
 #import <Parse/Parse.h>
 
+typedef enum {
+    PKQueryObjectsCountChangeError = -1,
+    PKQueryObjectsCountChangeFresh,
+    PKQueryObjectsCountChangeSame,
+    PKQueryObjectsCountChangeMore,
+} PKQueryObjectsCountChange;
+
 ////////////////////////////////////////////////////////////////////////////////
 // Parse query delegate
 ////////////////////////////////////////////////////////////////////////////////
@@ -26,7 +33,7 @@
 @optional
 - (PFQuery *)queryForTableView:(UITableView *)tableView;
 
-- (void)didLoadObjectsForTableView:(UITableView *)tableView error:(NSError *)error;
+- (void)didLoadObjectsForTableView:(UITableView *)tableView countChange:(PKQueryObjectsCountChange)change error:(NSError *)error;
 
 @end
 
