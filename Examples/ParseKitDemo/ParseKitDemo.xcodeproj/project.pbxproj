@@ -208,7 +208,7 @@
 				9A3F7FE415DC540C0065909D /* ODRefreshControl.m */,
 			);
 			name = ODRefreshControl;
-			path = ../../Libraries/ODRefreshControl/ODRefreshControl;
+			path = ../../Libraries/NUIKit/Libraries/ODRefreshControl/ODRefreshControl;
 			sourceTree = "<group>";
 		};
 		9A3F7FE615DC54160065909D /* SVPullToRefresh */ = {
@@ -218,7 +218,7 @@
 				9A3F7FE815DC54160065909D /* SVPullToRefresh.m */,
 			);
 			name = SVPullToRefresh;
-			path = ../../Libraries/SVPullToRefresh/SVPullToRefresh;
+			path = ../../Libraries/NUIKit/Libraries/SVPullToRefresh/SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
