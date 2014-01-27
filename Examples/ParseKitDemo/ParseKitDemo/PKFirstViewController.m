@@ -41,10 +41,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
-    PFObject *object = [self.objects objectAtIndex:indexPath.row];
+//    PFObject *object = [self.objects objectAtIndex:indexPath.row];
 
     // Configure the cell...
-    cell.textLabel.text = [object objectForKey:@"title"];
+//    cell.textLabel.text = [object objectForKey:@"title"];
 
     return cell;
 }

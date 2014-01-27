@@ -16,29 +16,8 @@
 
 #import "NUIKit.h"
 
-#import <Parse/Parse.h>
+#import "PKTableView.h"
 
-////////////////////////////////////////////////////////////////////////////////
-// Parse query delegate
-////////////////////////////////////////////////////////////////////////////////
-@protocol PKQueryDelegate <NSObject>
-
-@optional
-- (PFQuery *)queryForTableView:(UITableView *)tableView;
-
-- (void)queryTableView:(UITableView *)tableView didLoadObjects:(NSArray *)objects error:(NSError *)error;
-
-@end
-
-////////////////////////////////////////////////////////////////////////////////
-// Class interface
-////////////////////////////////////////////////////////////////////////////////
-@interface PKTableViewController : NUITableViewController <PKQueryDelegate>
-
-@property (assign, nonatomic) NSUInteger numberOfObjectsPerPage;
-
-@property (strong, readonly, nonatomic) NSArray *objects;
-
-@property (assign, nonatomic) id<PKQueryDelegate> queryDelegate;
+@interface PKTableViewController : NUITableViewController <PKTableViewDelegate>
 
 @end

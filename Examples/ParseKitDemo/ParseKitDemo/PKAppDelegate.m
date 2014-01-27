@@ -19,16 +19,15 @@
 #import <Parse/Parse.h>
 
 #import "PKFirstViewController.h"
-
 #import "PKSecondViewController.h"
+#import "PKThirdViewController.h"
 
 @implementation PKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#warning Missing Parse application configuration
-    [Parse setApplicationId:@""
-                  clientKey:@""];
+    [Parse setApplicationId:@"6oMCpu51blMQtCiD9JCNfX4YQGYpDmhXl4Cb9QLi"
+                  clientKey:@"zettJKjrJHUFq4q5nMLXbSPPMXk5XIAE6D9pM1xR"];
 
     if ([[PFQuery queryWithClassName:@"TestObject"] countObjects] <= 0) {
         for (int i = 0; i < 100; i++) {
@@ -41,14 +40,17 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
-    PKTableViewController *viewController1 = [[PKFirstViewController alloc] initWithStyle:UITableViewStylePlain];
-    viewController1.tableView.paginationEnabled = NO;
+//    PKTableViewController *viewController1 = [[PKFirstViewController alloc] initWithStyle:UITableViewStylePlain];
+//    viewController1.tableView.paginationEnabled = NO;
 
-    PKTableViewController *viewController2 = [[PKSecondViewController alloc] initWithStyle:UITableViewStylePlain];
-    viewController2.numberOfObjectsPerPage = 10;
+//    PKTableViewController *viewController2 = [[PKSecondViewController alloc] initWithStyle:UITableViewStylePlain];
+//    viewController2.numberOfObjectsPerPage = 10;
+
+    UIViewController *viewController3 = [[PKThirdViewController alloc] initWithNibName:@"PKThirdView" bundle:nil];
 
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+//    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController3, nil];
 
     self.window.rootViewController = self.tabBarController;
 

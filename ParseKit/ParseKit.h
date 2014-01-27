@@ -18,4 +18,5 @@
 
 #import <Parse/Parse.h>
 
+#import "PKTableView.h"
 #import "PKTableViewController.h"

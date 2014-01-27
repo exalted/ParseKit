@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506BA2321611FD3700A8F5C9 /* PKThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506BA2301611FD3600A8F5C9 /* PKThirdViewController.m */; };
+		506BA2331611FD3700A8F5C9 /* PKThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 506BA2311611FD3600A8F5C9 /* PKThirdView.xib */; };
+		50B77EF016119336003FCCEF /* PKTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B77EEF16119336003FCCEF /* PKTableView.m */; };
 		9A3F7F9F15DC52A20065909D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3F7F9E15DC52A20065909D /* UIKit.framework */; };
 		9A3F7FA115DC52A20065909D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3F7FA015DC52A20065909D /* Foundation.framework */; };
 		9A3F7FA315DC52A20065909D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3F7FA215DC52A20065909D /* CoreGraphics.framework */; };
@@ -36,6 +39,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		506BA22F1611FD3600A8F5C9 /* PKThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKThirdViewController.h; sourceTree = "<group>"; };
+		506BA2301611FD3600A8F5C9 /* PKThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKThirdViewController.m; sourceTree = "<group>"; };
+		506BA2311611FD3600A8F5C9 /* PKThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PKThirdView.xib; sourceTree = "<group>"; };
+		50B77EEE16119336003FCCEF /* PKTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKTableView.h; sourceTree = "<group>"; };
+		50B77EEF16119336003FCCEF /* PKTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKTableView.m; sourceTree = "<group>"; };
 		9A3F7F9A15DC52A20065909D /* ParseKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3F7F9E15DC52A20065909D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A3F7FA015DC52A20065909D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -152,6 +160,9 @@
 				9A3F7FBA15DC52A30065909D /* second.png */,
 				9A3F7FBC15DC52A30065909D /* second@2x.png */,
 				9A3F7FA515DC52A20065909D /* Supporting Files */,
+				506BA22F1611FD3600A8F5C9 /* PKThirdViewController.h */,
+				506BA2301611FD3600A8F5C9 /* PKThirdViewController.m */,
+				506BA2311611FD3600A8F5C9 /* PKThirdView.xib */,
 			);
 			path = ParseKitDemo;
 			sourceTree = "<group>";
@@ -171,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				9A3F7FEF15DC557A0065909D /* ParseKit.h */,
+				50B77EEE16119336003FCCEF /* PKTableView.h */,
+				50B77EEF16119336003FCCEF /* PKTableView.m */,
 				9A3F7FEC15DC54630065909D /* PKTableViewController.h */,
 				9A3F7FED15DC54630065909D /* PKTableViewController.m */,
 			);
@@ -278,6 +291,7 @@
 				9A3F7FB615DC52A30065909D /* first@2x.png in Resources */,
 				9A3F7FBB15DC52A30065909D /* second.png in Resources */,
 				9A3F7FBD15DC52A30065909D /* second@2x.png in Resources */,
+				506BA2331611FD3700A8F5C9 /* PKThirdView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +311,8 @@
 				9A3F7FE515DC540C0065909D /* ODRefreshControl.m in Sources */,
 				9A3F7FE915DC54160065909D /* SVPullToRefresh.m in Sources */,
 				9A3F7FEE15DC54630065909D /* PKTableViewController.m in Sources */,
+				50B77EF016119336003FCCEF /* PKTableView.m in Sources */,
+				506BA2321611FD3700A8F5C9 /* PKThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
